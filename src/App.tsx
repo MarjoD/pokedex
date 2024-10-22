@@ -4,7 +4,7 @@ import PokemonCard from "./components/PokemonCard.tsx";
 function App() {
 	return (
 		<div>
-			<PokemonCard pokemon={pokemonList[0]} />
+			<PokemonCard name={pokemonList[1].name} imgSrc={pokemonList[1].imgSrc} />
 		</div>
 	);
 }
