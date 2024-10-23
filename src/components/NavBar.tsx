@@ -1,7 +1,4 @@
-interface Pokemon {
-	name: string;
-	imgSrc?: string;
-}
+import type Pokemon from "../interfaces/Pokemon.tsx";
 
 interface NavBarProps {
 	pokemonIndex: number;
@@ -10,45 +7,18 @@ interface NavBarProps {
 }
 
 function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
-	const previousClick = () => {
-		setPokemonIndex(pokemonIndex - 1);
-	};
-
-	const nextClick = () => {
-		setPokemonIndex(pokemonIndex + 1);
+	const handleClick = () => {
+		setPokemonIndex(
+			pokemonList
+				.map((pokemon) => pokemon.name)
+				.indexOf(pokemonList[pokemonIndex].name),
+		);
 	};
 
 	return (
-		/* {(() => {
-				if (pokemonIndex > 0) {
-					return (
-						<button type="button" onClick={previousClick}>
-							previous
-						</button>
-					);
-				}
-			})()}
-			{(() => {
-				if (pokemonIndex < pokemonList.length - 1) {
-					return (
-						<button type="button" onClick={nextClick}>
-							next
-						</button>
-					);
-				}
-			})()} */
-		<div>
-			{pokemonIndex > 0 && (
-				<button type="button" onClick={previousClick}>
-					previous
-				</button>
-			)}
-			{pokemonIndex < pokemonList.length - 1 && (
-				<button type="button" onClick={nextClick}>
-					next
-				</button>
-			)}
-		</div>
+		<button type="button" onClick={handleClick}>
+			{pokemonList[pokemonIndex].name}
+		</button>
 	);
 }
 

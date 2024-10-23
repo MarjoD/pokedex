@@ -12,11 +12,14 @@ function App() {
 				name={pokemonList[pokemonIndex].name}
 				imgSrc={pokemonList[pokemonIndex].imgSrc}
 			/>
-			<NavBar
-				pokemonIndex={pokemonIndex}
-				setPokemonIndex={setPokemonIndex}
-				pokemonList={pokemonList}
-			/>
+			{pokemonList.map((pokemon, index) => (
+				<NavBar
+					key={pokemon.name}
+					pokemonIndex={index}
+					setPokemonIndex={setPokemonIndex}
+					pokemonList={pokemonList}
+				/>
+			))}
 		</div>
 	);
 }

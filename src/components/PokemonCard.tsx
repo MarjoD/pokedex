@@ -1,9 +1,6 @@
-interface pokemon {
-	name: string;
-	imgSrc?: string;
-}
+import type Pokemon from "../interfaces/Pokemon.tsx";
 
-function PokemonCard({ name, imgSrc }: pokemon) {
+function PokemonCard({ name, imgSrc }: Pokemon) {
 	return (
 		<figure>
 			{imgSrc ? <img src={imgSrc} alt={name} /> : <p>???</p>}
