@@ -8,6 +8,7 @@ interface NavBarProps {
 
 function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
 	const handleClick = () => {
+		pokemonList[pokemonIndex].name === "pikachu" && alert("pika pikachu !!!");
 		setPokemonIndex(
 			pokemonList
 				.map((pokemon) => pokemon.name)

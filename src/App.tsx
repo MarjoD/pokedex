@@ -2,8 +2,13 @@ import "./App.css";
 import PokemonCard from "./components/PokemonCard.tsx";
 import NavBar from "./components/NavBar.tsx";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
+	useEffect(() => {
+		alert("hello pokemon trainer :)");
+	}, []);
+
 	const [pokemonIndex, setPokemonIndex] = useState(0);
 
 	return (
